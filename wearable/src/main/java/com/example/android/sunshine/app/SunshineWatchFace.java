@@ -97,6 +97,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
         Paint mDatePaint;
         Paint mColonPaint;
         Paint mAmPmPaint;
+        Paint mDividerPaint;
 
         final BroadcastReceiver mTimeZoneReceiver = new BroadcastReceiver() {
             @Override
@@ -150,6 +151,10 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             mColonPaint = createTextPaint(timeColor);
 
             mAmPmPaint = createTextPaint(resources.getColor(R.color.digital_am_pm_color));
+
+            // initialize horizontal divider paints
+            mDividerPaint = new Paint();
+            mDividerPaint.setColor(resources.getColor(R.color.digital_divider_color));
 
             mCalendar = Calendar.getInstance();
             mDate = new Date();
@@ -267,6 +272,10 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                     getResources().getColor(R.color.digital_date_color_ambient) :
                     getResources().getColor(R.color.digital_date_color));
 
+            mDividerPaint.setColor(inAmbientMode ?
+                    getResources().getColor(R.color.digital_divider_color_ambient) :
+                    getResources().getColor(R.color.digital_divider_color));
+
             if (mLowBitAmbient) {
                 mDatePaint.setAntiAlias(!inAmbientMode);
                 mHourPaint.setAntiAlias(!inAmbientMode);
@@ -354,6 +363,13 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                     mYOffset + mLineHeight,
                     mDatePaint);
 
+            // draw a horizontal divider
+            int lineWidth = 70;
+            canvas.drawLine(bounds.centerX() - lineWidth / 2,
+                    mYOffset + (mLineHeight * 2),
+                    bounds.centerX() + lineWidth / 2,
+                    mYOffset + (mLineHeight * 2),
+                    mDividerPaint);
         }
 
         /**
