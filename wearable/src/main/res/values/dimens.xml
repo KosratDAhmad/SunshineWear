@@ -9,4 +9,6 @@
     <dimen name="digital_line_height">25dp</dimen>
     <dimen name="digital_am_pm_size_round">20dp</dimen>
     <dimen name="digital_am_pm_size">15dp</dimen>
+    <dimen name="digital_temp_size">20dp</dimen>
+    <dimen name="digital_temp_size_round">25dp</dimen>
 </resources>

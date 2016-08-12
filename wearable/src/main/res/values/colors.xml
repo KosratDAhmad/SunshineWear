@@ -8,4 +8,8 @@
     <color name="digital_am_pm_color_ambient">@color/digital_date_color_ambient</color>
     <color name="digital_divider_color">@color/digital_date_color</color>
     <color name="digital_divider_color_ambient">@color/digital_date_color_ambient</color>
+    <color name="digital_high_temp_color">@color/digital_time_color</color>
+    <color name="digital_high_temp_color_ambient">@color/digital_time_color</color>
+    <color name="digital_low_temp_color">@color/digital_date_color</color>
+    <color name="digital_low_temp_color_ambient">@color/digital_date_color_ambient</color>
 </resources>
