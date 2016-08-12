@@ -397,9 +397,9 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             // draw a horizontal divider
             int lineWidth = 70;
             canvas.drawLine(bounds.centerX() - lineWidth / 2,
-                    mYOffset + (mLineHeight * 2),
+                    mYOffset + (mLineHeight * 1.8f),
                     bounds.centerX() + lineWidth / 2,
-                    mYOffset + (mLineHeight * 2),
+                    mYOffset + (mLineHeight * 1.8f),
                     mDividerPaint);
 
             // draw weather icon
@@ -411,25 +411,25 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
                 ColorMatrixColorFilter filter = new ColorMatrixColorFilter(colorMatrix);
                 mWeatherIconPaint.setColorFilter(filter);
                 canvas.drawBitmap(weatherIcon, xImage,
-                        mYOffset + (mLineHeight * 2.5f),
+                        mYOffset + (mLineHeight * 2f),
                         mWeatherIconPaint);
             } else {
                 mWeatherIconPaint.setColorFilter(null);
                 canvas.drawBitmap(weatherIcon,
                         xImage,
-                        mYOffset + (mLineHeight * 2.5f),
+                        mYOffset + (mLineHeight * 2f),
                         mWeatherIconPaint);
             }
             String highTempText = String.format(getString(R.string.format_temperature), 30f);
             String lowTempText = String.format(getString(R.string.format_temperature), 10f);
             canvas.drawText(highTempText,
                     bounds.centerX() - 30,
-                    mYOffset + (mLineHeight * 3.7f),
+                    mYOffset + (mLineHeight * 3.2f),
                     mHighTempPaint);
 
             canvas.drawText(lowTempText,
                     bounds.centerX() + 35,
-                    mYOffset + (mLineHeight * 3.7f),
+                    mYOffset + (mLineHeight * 3.2f),
                     mLowTempPaint);
         }
 
